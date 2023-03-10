@@ -1,5 +1,5 @@
 
-key = 33333333
+
 # Starting Renan Enconde/Decode
 option =1
 while option != 3:
@@ -10,13 +10,18 @@ while option != 3:
                        "3. Quit \n"
                        "Please enter an option: "))
     if option == 1:
-        password = int(input("Please enter your password to encode: "))
-        password_encoded = password + key
-        print("Your password has been encoded and stored!")
+        password = (input("Please enter your password to encode: "))
+        new_password = ""
+        for digit in password:
+            new_digit = str((int(digit) + 3) % 10)
+            new_password += new_digit
+        password_encoded = new_password
+        print(f"Your password has been encoded and stored !")
+
 
     if option == 2:
-        password_decode = password_encoded - key
+        pass
+
         print(f"The encoded password is {password_encoded}, and the original password is {password_decode}.")
 
 
-#t3st
