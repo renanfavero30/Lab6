@@ -1,4 +1,12 @@
-
+# Evangeline Decode
+def decoder(new_password)
+    password_decoded = ""
+        for digit_ in new_password:
+            old_digit = int(digit_) - 3
+            if old_digit < 0:
+                old_digit = 9
+            password_decoded = password_decoded + str(old_digit)
+    return password_decoded
 
 # Starting Renan Enconde/Decode
 option =1
@@ -22,12 +30,7 @@ while option != 3:
 
     if option == 2:
         # Evangeline Decode
-        password_decoded = ""
-        for digit_ in new_password:
-            old_digit = int(digit_) - 3
-            if old_digit < 0:
-                old_digit = 9
-            password_decoded = password_decoded + str(old_digit)
+        password_decoded = decoder(new_password)
         
         print(f"The encoded password is {password_encoded}, and the original password is {password_decoded}."
                "\n") # Spacing for Menu
